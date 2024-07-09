@@ -11,54 +11,22 @@ function Hero() {
         <Carousel.Item interval={1000}>
           {/* <ExampleCarouselImage text="First slide"   /> */}
           <div className="img"></div>
-          <Carousel.Caption>
-            <button
-              type="button"
-              className="btn btn-success text-uppercase px-3"
-            >
-              Shop Now
-            </button>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           {/* <ExampleCarouselImage text="Second slide" /> */}
           <div className="img1"></div>
-          <Carousel.Caption>
-            <button
-              type="button"
-              className="btn btn-success text-uppercase px-3"
-            >
-              Shop Now
-            </button>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           {/* <ExampleCarouselImage text="Third slide" /> */}
           <div className="img2"></div>
-          <Carousel.Caption>
-            <button
-              type="button"
-              className="btn btn-success text-uppercase px-3"
-            >
-              Gift Now
-            </button>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           {/* <ExampleCarouselImage text="Third slide" /> */}
           <div className="img3"></div>
-          <Carousel.Caption>
-            <button
-              type="button"
-              className="btn btn-success text-uppercase px-3"
-            >
-              Shop Now
-            </button>
-          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
       {/* oofers section  */}
-      <div className="bg-warning">
+      {/* <div className="bg-warning">
         <Container>
           <Row className="py-3">
             <div className="col-md-8 d-flex justify-content-end">
@@ -77,10 +45,10 @@ function Hero() {
             </div>
           </Row>
         </Container>
-      </div>
+      </div> */}
       {/* oofers section  */}
 
-      <div className="container-fluid p-5 plants-category">
+      {/* <div className="container-fluid p-5 plants-category">
         <div className="row d-flex justify-content-center overflow-x-auto">
           <div className="plant-img d-flex justify-content-around ">
             <div className="justify-content-center">
@@ -121,10 +89,10 @@ function Hero() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* oofers section  */}
-      <div className="bg-register">
+      {/* <div className="bg-register">
         <Container>
           <Row className="py-3 ">
             <div className="col-md-8 d-flex justify-content-center justify-content-md-end">
@@ -146,10 +114,8 @@ function Hero() {
             </div>
           </Row>
         </Container>
-      </div>
+      </div> */}
       {/* ofers section  */}
-
-      
     </div>
   );
 }
