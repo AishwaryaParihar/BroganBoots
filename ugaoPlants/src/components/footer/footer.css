@@ -1,70 +1,7 @@
-/* footer
-    */
-/* marquee */
-.marquee {
-    background-color: #114c36;
-    color: #e4b3d6;
-    font-size: 17px;
-    font-weight: 500;
-  }
-  @media (max-width: 1140px) {
-    .roll-w:nth-child(n + 5) {
-      display: none;
-    }
-  }
-  @media (max-width: 768px) {
-    .roll-w:nth-child(n + 4) {
-      display: none;
-    }
-  }
-  @media (max-width: 588px) {
-    .marquee {
-      font-size: 14px;
-    }
-    .roll-w:nth-child(n + 3) {
-      display: none;
-    }
-  }
-  /* marquee */
-  
-  /* location */
-  .ul-location {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-inline-start: -1.2rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .li-location {
-    display: list-item;
-    text-align: -webkit-match-parent;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .a-location {
-    position: relative;
-    z-index: 1;
-    background: none;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: auto;
-    transition-property: color;
-    color: #114c36;
-    width: auto;
-    font-family: "Outfit";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 20px;
-    font-feature-settings: "pnum" on, "lnum" on;
-  }
+
   /* location  */
   .footer {
-    background-color: #fafafa;
+    background-color: rgb(32,95,131);
     /* padding: 80px 0; */
     padding-top: 4rem;
   }
@@ -77,38 +14,40 @@
     padding: 0;
   }
   .footer-col {
-    width: 20%;
+    width: 25%;
     padding: 0 10px;
   }
   
-  .footer-col h4 {
-    font-size: 18px;
-    color: #151515;
+  .footer-col h3 {
+    font-size: 25px;
+    color: #ffffff;
     text-transform: capitalize;
     margin-bottom: 1.2rem;
     font-weight: 500;
     position: relative;
   }
   
-  /* .footer-col h4::before {
+  .footer-col h3::before {
         content: "";
         position: absolute;
         left: 0;
         bottom: -10px;
-        background-color: #E91E63;
+        background-color: #f3f2f2;
         width: 90px;
         height: 2px;
     }
-     */
+    .footer-col{
+      font-size: .8rem;
+    }
   .footer-col ul li:not(:last-child) {
     margin-bottom: 10px;
   }
   
   .footer-col ul li a {
-    color: #114c36;
+    color: #ffffff;
     display: block;
     font-family: "Outfit";
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 20px;
     text-transform: capitalize;
@@ -119,12 +58,12 @@
   
   .footer-col ul li a:hover {
     text-decoration: underline;
-    text-decoration-color: #114c36;
+    text-decoration-color: #000000;
     text-decoration-thickness: 1px;
   }
   
   .footer-col .social-links a {
-    color: #114c36;
+    color: #000000;
     background-color: rgba(255, 255, 255, 0.2);
     display: inline-block;
     height: 40px;
