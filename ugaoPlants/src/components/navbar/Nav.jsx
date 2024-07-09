@@ -155,11 +155,11 @@ function Nav() {
             </div>
             <div className="d-flex justify-content-end align-items-center">
               <form className="d-flex  align-items-center me-3 w-100" role="search">
-                <div className="search-box w-100 d-flex flex-nowrap border border-dark rounded-5">
+                <div className="search-box w-100 d-flex flex-nowrap ">
                   <input
                     onChange={handleSearch}
                     value={search}
-                    className="form-control border-0 p-2 px-3 rounded-5 input-text"
+                    className="form-control  p-2 px-3 rounded-5 input-text"
                     type="search"
                     placeholder="Search..."
                     aria-label="Search"
@@ -173,7 +173,7 @@ function Nav() {
                 }}
               >
                 <Link>
-                  <i className="fa-regular fa-user text-dark pt-3 px-2"></i>
+                  <i className="fa-regular fa-user text-dark pt-3 px-2 "></i>
                 </Link>
               </span>
               <span>
@@ -193,7 +193,7 @@ function Nav() {
               {user?._id && (
                 <Link to="#" onClick={toggleCartOffcanvas}>
                   <i className="fa-solid fa-cart-shopping pt-3 px-2 text-dark">
-                    <sup className="text-white rounded-circle fw-bold bg-success px-2 py-1">
+                    <sup className="text-white rounded-circle fw-bold bg-secondary px-2 py-1">
                       {context?.cartProductCount}
                     </sup>
                   </i>
