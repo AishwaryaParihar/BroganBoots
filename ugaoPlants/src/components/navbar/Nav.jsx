@@ -88,7 +88,7 @@ function Nav() {
                 ></button>
               </div>
               <div className="offcanvas-body">
-                <ul className="navbar-nav  text-uppercase point12px fwbold mt-2">
+                <ul className="navbar-nav navbar-nav01 text-uppercase point12px fwbold mt-2">
                   <li className="nav-item ">
                     <Link
                       className="nav-link hover-line nav-font"
