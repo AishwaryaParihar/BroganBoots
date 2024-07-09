@@ -17,6 +17,10 @@ export const UploadProduct = ({ onClose, fetchData }) => {
     description: "",
     price: "",
     sellingPrice: "",
+    weight: "",
+    size: "",
+    color: "",
+    productFeatures: "",
   });
 
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);
@@ -222,7 +226,75 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             required
           />
 
-          <label htmlFor="description"> Description :</label>
+
+
+
+             {/* NEW ADDED */}
+
+          <label htmlFor="weight"> Weight :</label>
+          <input
+            type="number"
+            id="weight"
+            placeholder="Enter Product weight "
+            name="weight"
+            value={data.weight}
+            onChange={handleOnChange}
+            className="p-2 m-2 rounded-3 bg-light border border-light"
+            required
+          />
+
+
+          <label htmlFor="smallestSize">Smallest Size :</label>
+          <input
+            type="number"
+            id="smallestSize"
+            placeholder="smallest size you have available  "
+            name="smallestSize"
+            value={data.smallestSize}
+            onChange={handleOnChange}
+            className="p-2 m-2 rounded-3 bg-light border border-light"
+            required
+          />
+
+
+
+          <label htmlFor="biggestSize">Biggest Size :</label>
+          <input
+            type="number"
+            id="biggestSize"
+            placeholder="biggest size you have available  "
+            name="biggestSize"
+            value={data.biggestSize
+
+            }
+            onChange={handleOnChange}
+            className="p-2 m-2 rounded-3 bg-light border border-light"
+            required
+          />
+
+
+
+
+         <label htmlFor="color"> Color :</label>
+          <input
+            type="text"
+            id="color"
+            placeholder="Enter Product color "
+            name="color"
+            value={data.color}
+            onChange={handleOnChange}
+            className="p-2 m-2 rounded-3 bg-light border border-light"
+            required
+          />
+
+
+
+
+     {/* NEW ADDED */}
+
+
+     
+     <label htmlFor="description"> Description :</label>
           <textarea
             type="text"
             id="description"
@@ -233,6 +305,8 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             rows={4}
             className="p-2 m-2 rounded-3 bg-light border border-light "
           />
+
+
 
           <button className="btn btn-success ms-2">Uplaad Product</button>
         </form>

@@ -1,8 +1,9 @@
 const ProductCategory = [
-    {id : "1", label : "Plants", value : "plants"},
-    {id : "2", label : "Seeds", value : "seeds"},
-    {id : "3", label : "Pots & Planters", value : "pots"},
-    {id : "4", label : "Plant Care", value : "plantcare"},
+    {id : "1", label : "Rugged", value : "Rugged"},
+    {id : "2", label : "Suede", value : "Suede"},
+    {id : "3", label : "Chelsea", value : "Chelsea"},
+    {id : "4", label : "Lace-up", value : "Lace-up"},
+    {id : "5", label : "Stomper", value : "Stomper"},
     // {id : 1, label : "Air Plant", value : "airplant"},
     // {id : 2, label : "Cacti & Succulents", value : "cactiandsucculent"},
     // {id : 3, label : "Climbers", value : "climbers"},
