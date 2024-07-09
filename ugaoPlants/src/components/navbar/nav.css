@@ -4,9 +4,6 @@
     box-sizing: border-box;
     font-family: 'Outfit';
   }
-  .primarycolor {
-    color: #114c36;
-  }
   
   /* about ugaoo */
   .whyugaoo h2 {
@@ -46,7 +43,7 @@
     font-size: 0.85rem;
   }
   .bgNav {
-    background-color: rgb(255, 246, 244);
+    background-color: rgb(255, 255, 255);
     font-family: sans-serif;
   }
   
@@ -65,7 +62,7 @@
 
 .navbar-nav01 .dropdown-menu01 {
   display: none;
-  color: #0f4c36;
+  color: #000000;
   position: absolute;
   background-color: rgb(255, 246, 244);
   border: 0;
@@ -91,7 +88,7 @@
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #0f4c36;
+  color: #000000;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
@@ -99,7 +96,7 @@
 }
 
 .activegreen{
-  color: #149253
+  color: #000000
 }
 
 .hover-line {
