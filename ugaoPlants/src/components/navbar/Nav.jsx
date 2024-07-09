@@ -205,7 +205,10 @@ function Nav() {
                     onClick={() => {
                       setMenuDisplay((preve) => !preve);
                     }}
-                  ></span>
+                    
+                  > <Link>
+                  <i className="fa-regular fa-user text-success pt-3 px-2"></i>
+                </Link></span>
                 )}
                 {menuDisplay && (
                   <span className="popUPtext">
