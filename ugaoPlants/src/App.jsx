@@ -25,6 +25,9 @@ import CategoryProduct from "./components/screens/homeComponent02/CategoryProduc
 import ProductDetails from "./components/screens/homeComponent02/ProductDetails";
 import Cart from "./components/screens/homeComponent02/Cart";
 import SearchProduct from "./components/screens/homeComponent02/SearchProduct";
+import { Breadcrumb } from "react-bootstrap";
+import About from "./components/screens/About";
+import Contactus from "./components/screens/Contactus";
 
 
 function App() {
@@ -79,6 +82,8 @@ function App() {
             <Route path="/" element={<UserProvider />}>
               <Route path="/" element={<Home />} />
               <Route path="/seeds" element={<SeedsHero />} />
+              <Route path="/about" element={<About/>} />
+              <Route path="/contact-us" element={<Contactus/>} />
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />

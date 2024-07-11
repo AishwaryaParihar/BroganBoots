@@ -99,7 +99,7 @@ function Nav() {
                     </Link>
                   </li>
                   <li className="nav-item  ">
-                    <Link className="nav-link hover-line nav-font" to="/seeds">
+                    <Link className="nav-link hover-line nav-font" to="/about">
                       About
                     </Link>
                   </li>
@@ -143,7 +143,7 @@ function Nav() {
                     </ul>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link hover-line nav-font" href="#">
+                    <a className="nav-link hover-line nav-font" href="/contact-us">
                       Contact
                     </a>
                   </li>
