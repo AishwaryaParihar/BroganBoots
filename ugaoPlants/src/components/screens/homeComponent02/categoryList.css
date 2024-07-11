@@ -1,0 +1,18 @@
+.category-bg-color {
+    background-color: #f8f9fa; /* Example background color */
+  }
+  
+  .textdecor {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .textdecor:hover {
+    color: #007bff; /* Example hover color */
+  }
+  
+  .category-bg-color img {
+    max-width: 100%;
+    height: auto;
+  }
+  

@@ -18,7 +18,8 @@ export const UploadProduct = ({ onClose, fetchData }) => {
     price: "",
     sellingPrice: "",
     weight: "",
-    size: "",
+    smallestSize: "",
+    biggestSize: "",
     color: "",
     productFeatures: "",
   });
@@ -66,6 +67,7 @@ export const UploadProduct = ({ onClose, fetchData }) => {
 
   const handleSubmit = async (e)=> {
     e.preventDefault()
+    console.log(data)
     
     const response = await fetch(SummaryApi.uploadProduct.url,{
       method : SummaryApi.uploadProduct.method,
@@ -264,9 +266,7 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             id="biggestSize"
             placeholder="biggest size you have available  "
             name="biggestSize"
-            value={data.biggestSize
-
-            }
+            value={data.biggestSize}
             onChange={handleOnChange}
             className="p-2 m-2 rounded-3 bg-light border border-light"
             required
@@ -282,6 +282,19 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             placeholder="Enter Product color "
             name="color"
             value={data.color}
+            onChange={handleOnChange}
+            className="p-2 m-2 rounded-3 bg-light border border-light"
+            required
+          />
+
+
+         <label htmlFor="features"> Features :</label>
+          <input
+            type="text"
+            id="features"
+            placeholder="Enter Product color "
+            name="features"
+            value={data.features}
             onChange={handleOnChange}
             className="p-2 m-2 rounded-3 bg-light border border-light"
             required
