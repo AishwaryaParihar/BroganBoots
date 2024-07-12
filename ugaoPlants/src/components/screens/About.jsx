@@ -1,13 +1,13 @@
 import React from 'react'
-import imgAbout from '../../assets/Animal.webp'
+import imgAbout from '../../assets/EXTRALARGE.jpg'
 const About = () => {
   return (
     <div>
-    <div className="container">
+    <div className="container pt-5">
       <div className="row pt-5">
-          <div className="col-md-6  d-flex align-items-center px-4">
+          <div className="col-md-6  d-flex align-items-center px-4 ">
               <div className="join">
-                  <h2>About <span className="text-primary">Br</span>ogan Boots</h2>
+                  <h2>About <span className="text-primary">Bro</span>gan B<span className="text-primary">oo</span>ts</h2>
                   <p>Brogan Boots was built out of frustration to make trade-offs between – clunky and delicate dress boots that fall apart after a few wears, or boots that were incredibly overpriced? And it is when I decided, there has to be another option</p>
                  <p>At Brogan Boots we offer ridiculously high quality footwear that are designed, developed and hand crafted in-house by our efficient and highly skilled artisans, drawing inspiration from the world around us and our amazing customers.</p>
               </div>
