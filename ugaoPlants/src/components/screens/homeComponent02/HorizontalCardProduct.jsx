@@ -4,7 +4,7 @@ import { Card, Button, Badge } from "react-bootstrap"; // Assuming you're using 
 import { Link } from "react-router-dom";
 import Context from "../../../context";
 import addToCart from "../../../helper/addToCart"; 
-
+import headingimg from "../../../assets/heading-icon.png"
 
 const HorizontalCardProduct = ({ category, heading }) => {
   const [data, setData] = useState([]);
@@ -35,13 +35,14 @@ const HorizontalCardProduct = ({ category, heading }) => {
 
   return (
     <div className="container-fluid p-5">
-      <div className="heading py-3">
+      <div className="heading text-center py-3">
         <h2> {heading}</h2>
+        <img src={headingimg} alt="" className="img-fluid"/>
       </div>
       <div className="row">
         {loading
           ? loadingList.map((_, index) => (
-              <div key={index} className="col-6 col-md-3">
+              <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3">
                 <Card className="border-0">
                   <Card.Body>
                     <div className="placeholder-glow">
@@ -56,8 +57,8 @@ const HorizontalCardProduct = ({ category, heading }) => {
             ))
           : // Limit to 4 products
             data.slice(0, 4).map((product, index) => (
-              <div key={index} className="col-6 col-md-3">
-                <Card className="border-0">
+              <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3">
+                <Card className="border-0 shadow">
                   <Link to={"product/" + product?._id} className="nolink">
                     <div className="textdecor position-relative">
                       <img
@@ -75,7 +76,7 @@ const HorizontalCardProduct = ({ category, heading }) => {
                     </div>
                     <Card.Body className="p-2 m-0">
                       <Card.Title>{product.productName}</Card.Title>
-                      <div className="bestProductName pt-2 pb-3"></div>
+                      <div className=" pt-2"></div>
                       <div className="star-rating">
                         {Array.from({ length: 5 }, (v, i) => (
                           <i
@@ -86,16 +87,16 @@ const HorizontalCardProduct = ({ category, heading }) => {
                           />
                         ))}
                       </div>
-                      <p className="text-success h6 py-3">
+                      <p className="textprimary h6 py-2">
                         <del className="text-secondary">
                           <i className="fa-solid fa-indian-rupee-sign point12px"></i>
                           {product.price}
                         </del>
-                        {"  "}From
+                        {"  "}From {"  "}
                         <i className="fa-solid fa-indian-rupee-sign point12px"></i>
                         {product.sellingPrice}
                       </p>
-                      <Button className="w-100 btn btn-success rounded-0 text-uppercase" onClick={(e)=>handleAddToCart(e,product?._id)}>
+                      <Button className="w-100 btn bg-color rounded-0 text-uppercase" onClick={(e)=>handleAddToCart(e,product?._id)}>
                         View Product
                       </Button>
                     </Card.Body>
@@ -103,11 +104,7 @@ const HorizontalCardProduct = ({ category, heading }) => {
                 </Card>
               </div>
             ))}
-        <div className="viewall my-5 d-flex justify-content-center">
-          {/* <Button className="px-5 btn btn-success rounded-0 text-uppercase rounded-1">
-            View All
-          </Button> */}
-        </div>
+        
       </div>
     </div>
   );
