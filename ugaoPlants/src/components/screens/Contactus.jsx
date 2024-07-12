@@ -5,9 +5,9 @@ const Contactus = () => {
   return (
     <div>
       <div class="section section-padding pt-5">
-      <div className="container pt-5">
+      <div className="container ">
       {/* Contact Information Start */}
-      <div className="row mt-5">
+      <div className="row ">
         <h4 className="text-center text-decoration-underline pt-0 pt-lg-0 pt-md-5">Cont<span className="text-primary">act</span> Us</h4>
         <div className="col-lg-5  col-12 mt-4">
           {/* Section Title Start */}
