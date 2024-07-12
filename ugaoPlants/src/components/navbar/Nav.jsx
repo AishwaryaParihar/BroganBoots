@@ -78,7 +78,7 @@ function Nav() {
             >
               <div className="offcanvas-header">
                 <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                  <img src={logo} alt="" className="logo-img" />
+                  <img src={logo} alt="" className="logo-img w-25" />
                 </h5>
                 <button
                   type="button"
@@ -143,7 +143,7 @@ function Nav() {
                     </ul>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link hover-line nav-font" href="/contact-us">
+                    <Link className="nav-link hover-line nav-font" to="/contact-us">
                       Contact
                     </Link>
                   </li>
