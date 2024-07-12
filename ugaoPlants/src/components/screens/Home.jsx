@@ -21,7 +21,7 @@ function Home() {
       <Hero />
       {/* <Offers></Offers> */}
       {/* <Bestpick /> */}
-      <CategoryList/>
+      {/* <CategoryList/> */}
       <HorizontalCardProduct category={"rugged"} heading={"BestSeller"} />
       <HorizontalCardProduct category={"suede"} heading={"New Arrivals"} />
       {/* <Bestseller></Bestseller> */}
