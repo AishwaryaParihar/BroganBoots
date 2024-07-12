@@ -1,6 +1,7 @@
 import SummaryApi from "../common/Index"
 
 const fetchCategoryWiseProduct = async(category)=>{
+    console.log(category)
     const response = await fetch(SummaryApi.categoryWiseProduct.url,{
         method : SummaryApi.categoryWiseProduct.method,
         headers : {

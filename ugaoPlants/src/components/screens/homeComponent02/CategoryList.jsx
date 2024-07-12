@@ -5,7 +5,6 @@ import './categoryList.css'
 
 const CategoryList = () => {
   const [categoryProduct, setCategoryProduct] = useState([]);
-  // const [allCategories, setAllCategories] = useState('');
   const [loading, setLoading] = useState(false);
 
   const categoryLoading = new Array(13).fill(null);
@@ -22,25 +21,6 @@ const CategoryList = () => {
     fetchCategoryProduct();
   }, []);
 
-  {
-    /* for all category start*/
-  }
-
-  // useEffect(() => {
-  //   const allCategories = categoryProduct.map((prod, i) => {
-  //     if (i !== 0) {
-  //       return "&category=" + prod.category + "&";
-  //     } else if (i === categoryProduct.length - 1) {
-  //       return "&category=" + prod.category;
-  //     } else {
-  //       return "category=" + prod.category + "&";
-  //     }
-  //   });
-
-  //   setAllCategories(allCategories)
-
-  // }, [categoryProduct]);
-
   const allCategoriesquarry = useMemo(() =>
       categoryProduct.map((prod, i) => {
         if (i !== 0) {
@@ -54,46 +34,40 @@ const CategoryList = () => {
     [categoryProduct]
   );
 
-  // setAllCategories(allCategories)
-  {
-    /* for all category ende*/
-  }
-
   return (
-    <div className="container-fluid  pt-5 category-bg-color ">
-    
-      <div className=" my-4 d-flex">
+    <div className="container-fluid p-0 m-0">
+      <div className="category-bg-color d-flex justify-content-center">
         {loading && <p>Loading...</p>}
-        {!loading &&
-          categoryProduct.map((product, index) => (
-            <div key={index} className= " w-25 h-25 ">
-              <Link
-                to={"/product-category?category=" + product?.category}
-                className="textdecor h5 "
-              >
-                <div className="text-center rounded-circle ">
-                  <img
-                    src={product?.productImage[0]}
-                    alt={product.category}
-                    className=" w-25 h-25 rounded-circle "
-                  />
-                </div>
-                <div className="text-center py-2 text-capitalize">
-                  {product.category}
-                </div>
-              </Link>
-            </div>
-          ))}
+        {!loading && (
+          <div className="category-scroll-container">
+            {categoryProduct.map((product, index) => (
+              <div key={index} className="category-img-box-out">
+                <Link
+                  to={"/product-category?category=" + product?.category}
+                  className="textdecor h5"
+                >
+                  <div className="text-center category-img-box">
+                    <img
+                      src={product?.productImage[0]}
+                      alt={product.category}
+                      className="category-img"
+                    />
+                  </div>
+                  <div className="text-center py-2 text-capitalize">
+                    {product.category}
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* for all category */}
-<div className="">
-  
-<Link to={`/product-category?${allCategoriesquarry}`}>
-        <div className="textdecor">All categories</div>
-      </Link>
-</div>
-      {/* for all category */}
+      <div>
+        <Link to={`/product-category?${allCategoriesquarry}`}>
+          <div className="textdecor">All categories</div>
+        </Link>
+      </div>
     </div>
   );
 };
