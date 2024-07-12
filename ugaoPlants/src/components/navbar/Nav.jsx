@@ -99,7 +99,7 @@ function Nav() {
                     </Link>
                   </li>
                   <li className="nav-item  ">
-                    <Link className="nav-link hover-line nav-font" to="/seeds">
+                    <Link className="nav-link hover-line nav-font" to="/about">
                       About
                     </Link>
                   </li>
@@ -143,9 +143,9 @@ function Nav() {
                     </ul>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link hover-line nav-font" href="#">
+                    <Link className="nav-link hover-line nav-font" href="/contact-us">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -153,8 +153,8 @@ function Nav() {
             <div className="d-flex justify-content-center align-items-center ">
               <img src={logo} alt="Logo" className="logo-img w-25" />
             </div>
-            <div className="d-flex justify-content-end align-items-center">
-              <form className="d-flex  align-items-center me-3 w-100" role="search">
+            <div className="d-flex justify-content-end align-items-center ">
+              <form className="d-flex  align-items-center me-3 w-100 d-lg-block d-none" role="search">
                 <div className="search-box w-100 d-flex flex-nowrap ">
                   <input
                     onChange={handleSearch}
@@ -228,6 +228,19 @@ function Nav() {
               </span>
             </div>
           </div>
+          <form className="d-flex  align-items-center me-3 w-100 d-lg-none d-block" role="search">
+                <div className="search-box w-100 d-flex flex-nowrap ">
+                  <input
+                    onChange={handleSearch}
+                    value={search}
+                    className="form-control  p-2 px-3 rounded-5 input-text"
+                    type="search"
+                    placeholder="Search..."
+                    aria-label="Search"
+                  />
+                  <i className="fa-solid fa-magnifying-glass text-dark"></i>
+                </div>
+              </form>
         </nav>
       </section>
       <Cart
