@@ -22,17 +22,17 @@ function Home() {
       {/* <Offers></Offers> */}
       {/* <Bestpick /> */}
       <CategoryList/>
-      <HorizontalCardProduct category={"plants"} heading={"BestSeller"} />
-      <HorizontalCardProduct category={"pots"} heading={"New Arrivals"} />
+      <HorizontalCardProduct category={"rugged"} heading={"BestSeller"} />
+      <HorizontalCardProduct category={"suede"} heading={"New Arrivals"} />
       {/* <Bestseller></Bestseller> */}
 
-      <Shopthelook></Shopthelook>
-      <DealOfTheWee />
-      <WhyUgao></WhyUgao>
-      <Youtube />
-      <PlantSubscription />
+      {/* <Shopthelook></Shopthelook> */}
+      {/* <DealOfTheWee /> */}
+      {/* <WhyUgao></WhyUgao> */}
+      {/* <Youtube /> */}
+      {/* <PlantSubscription /> */}
       {/* <Review></Review> */}
-      <About />
+      {/* <About /> */}
     </div>
   );
 }

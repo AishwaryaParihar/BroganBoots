@@ -104,9 +104,9 @@ const HorizontalCardProduct = ({ category, heading }) => {
               </div>
             ))}
         <div className="viewall my-5 d-flex justify-content-center">
-          <Button className="px-5 btn btn-success rounded-0 text-uppercase rounded-1">
+          {/* <Button className="px-5 btn btn-success rounded-0 text-uppercase rounded-1">
             View All
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>
