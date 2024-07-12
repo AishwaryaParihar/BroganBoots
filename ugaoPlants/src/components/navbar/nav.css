@@ -28,6 +28,7 @@
   }
   .search-box {
     position: relative;
+    width: 130px;
   }
   .search-box input {
     padding-left: 10px;

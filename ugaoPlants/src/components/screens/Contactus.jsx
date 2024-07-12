@@ -8,8 +8,8 @@ const Contactus = () => {
       <div className="container pt-5">
       {/* Contact Information Start */}
       <div className="row mt-5">
-        <h4 className="text-center text-decoration-underline">Cont<span className="text-primary">act</span> Us</h4>
-        <div className="col-lg-5 col-md-5 col-12 mt-4">
+        <h4 className="text-center text-decoration-underline pt-0 pt-lg-0 pt-md-5">Cont<span className="text-primary">act</span> Us</h4>
+        <div className="col-lg-5  col-12 mt-4">
           {/* Section Title Start */}
           <div className="mb-4">
             <h2 className="h3">K<span className="text-primary">ee</span>p in <span className="text-primary">Tou</span>ch with us</h2>
@@ -49,7 +49,7 @@ const Contactus = () => {
         </div>
 
         {/* Contact Form Section Start */}
-        <div className="col-lg-7 col-12 mx-auto mb-4 border rounded-3 mt-3 p-4">
+        <div className="col-lg-7 col-12 mx-auto mb-4 border rounded-3 mt-3 p-4 ">
           <div className="mb-4">
             <h2 className="h3">Se<span className="text-primary">n</span>d a <span className="text-primary">Mess</span>age</h2>
           </div>
@@ -57,7 +57,7 @@ const Contactus = () => {
           <div>
             <form action="#" method="post">
               <div className="row">
-                <div className="form-group col-md-6">
+                <div className="form-group col-md-6 ">
                   <input
                     type="text"
                     className="form-control"
@@ -66,7 +66,7 @@ const Contactus = () => {
                     required
                   />
                 </div>
-                <div className="form-group col-md-6 ">
+                <div className="form-group col-md-6 pt-3 pt-md-0 ">
                   <input
                     type="number"
                     className="form-control"

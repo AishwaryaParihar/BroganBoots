@@ -4,11 +4,14 @@
   box-sizing: border-box;
   font-family: "Outfit";
 }
-.primarycolor {
-  color: #114c36;
+.textprimary {
+  color: rgb(32,95,131);
 }
 .bgprimary {
-  background-color: rgb(20, 146, 83);
+  background-color: primarycolor;
+}
+.bg-color{
+  background: rgb(32,95,131);
 }
 .point12px {
   font-size: 0.8rem;
@@ -221,4 +224,16 @@
   text-shadow: 0px 0px 5px #000;
   font-size: 16px;
   border-radius: 5px 5px 0px 0px;
+}
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#togglerClosebtn {
+  --bs-btn-close-focus-shadow: none;
+}
+#navbarToggler {
+  --bs-navbar-toggler-border-color: none;
+  --bs-navbar-toggler-focus-width: none;
 }

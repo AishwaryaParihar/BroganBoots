@@ -67,6 +67,7 @@ function Nav() {
               data-bs-target="#offcanvasNavbar"
               aria-controls="offcanvasNavbar"
               aria-label="Toggle navigation"
+              id="navbarToggler"
             >
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -78,13 +79,14 @@ function Nav() {
             >
               <div className="offcanvas-header">
                 <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                  <img src={logo} alt="" className="logo-img" />
+                  <img src={logo} alt="" className="logo-img w-25" />
                 </h5>
                 <button
                   type="button"
                   className="btn-close"
                   data-bs-dismiss="offcanvas"
                   aria-label="Close"
+                  id="togglerClosebtn"
                 ></button>
               </div>
               <div className="offcanvas-body">
@@ -143,7 +145,7 @@ function Nav() {
                     </ul>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link hover-line nav-font" href="/contact-us">
+                    <Link className="nav-link hover-line nav-font" to="/contact-us">
                       Contact
                     </Link>
                   </li>
@@ -154,12 +156,12 @@ function Nav() {
               <img src={logo} alt="Logo" className="logo-img w-25" />
             </div>
             <div className="d-flex justify-content-end align-items-center ">
-              <form className="d-flex  align-items-center me-3 w-100 d-lg-block d-none" role="search">
-                <div className="search-box w-100 d-flex flex-nowrap ">
+              <form className="d-flex  align-items-center me-3  d-lg-block d-none" role="search">
+                <div className="search-box  d-flex flex-nowrap ">
                   <input
                     onChange={handleSearch}
                     value={search}
-                    className="form-control  p-2 px-3 rounded-5 input-text"
+                    className="form-control   p-2 px-3 rounded-5 input-text"
                     type="search"
                     placeholder="Search..."
                     aria-label="Search"
@@ -228,12 +230,12 @@ function Nav() {
               </span>
             </div>
           </div>
-          <form className="d-flex  align-items-center me-3 w-100 d-lg-none d-block" role="search">
+          <form className="d-flex  align-items-center mx-3 w-100 d-lg-none d-block" role="search">
                 <div className="search-box w-100 d-flex flex-nowrap ">
                   <input
                     onChange={handleSearch}
                     value={search}
-                    className="form-control  p-2 px-3 rounded-5 input-text"
+                    className="form-control  p-2 px-5 rounded-5 input-text"
                     type="search"
                     placeholder="Search..."
                     aria-label="Search"
