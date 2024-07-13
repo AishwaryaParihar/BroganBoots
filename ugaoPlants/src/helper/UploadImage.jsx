@@ -1,4 +1,5 @@
 // const url = `https://api.cloudinary.com/v1_1/${process.env.VITE_CLOUD_NAME_CLOUDINARY}/image/upload`
+// const url = `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUD_NAME_CLOUDINARY}/image/upload`;
 const url = `https://api.cloudinary.com/v1_1/${import.meta.env.VITE_CLOUD_NAME_CLOUDINARY}/image/upload`;
 
 

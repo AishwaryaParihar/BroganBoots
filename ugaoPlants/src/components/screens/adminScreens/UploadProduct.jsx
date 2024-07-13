@@ -18,8 +18,8 @@ export const UploadProduct = ({ onClose, fetchData }) => {
     price: "",
     sellingPrice: "",
     weight: "",
-    smallestSize: "",
-    biggestSize: "",
+    // Size: "",
+    smallBigSize: "",
     color: "",
     productFeatures: "",
   });
@@ -41,6 +41,8 @@ export const UploadProduct = ({ onClose, fetchData }) => {
   const handleUploadProduct = async (e) => {
     const file = e.target.files[0];
     const uploadImageCloudinary = await UploadImage(file);
+
+
 
     setData((preve) => {
       return {
@@ -246,13 +248,13 @@ export const UploadProduct = ({ onClose, fetchData }) => {
           />
 
 
-          <label htmlFor="smallestSize">Smallest Size :</label>
+          <label htmlFor="smallBigSize">small and Big Size Size :</label>
           <input
-            type="number"
-            id="smallestSize"
+            type="text"
+            id="smallBigSize"
             placeholder="smallest size you have available  "
-            name="smallestSize"
-            value={data.smallestSize}
+            name="smallBigSize"
+            value={data.smallBigSize}
             onChange={handleOnChange}
             className="p-2 m-2 rounded-3 bg-light border border-light"
             required
@@ -260,7 +262,7 @@ export const UploadProduct = ({ onClose, fetchData }) => {
 
 
 
-          <label htmlFor="biggestSize">Biggest Size :</label>
+          {/* <label htmlFor="biggestSize"> Size :</label>
           <input
             type="number"
             id="biggestSize"
@@ -271,7 +273,7 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             className="p-2 m-2 rounded-3 bg-light border border-light"
             required
           />
-
+ */}
 
 
 
