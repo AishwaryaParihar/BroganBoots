@@ -237,3 +237,55 @@
   --bs-navbar-toggler-border-color: none;
   --bs-navbar-toggler-focus-width: none;
 }
+
+
+/* product size input  */
+.option-value {
+  padding-bottom: calc(10% - 4px);
+  width: calc(10% - 4px);
+  display: flex;
+  height: 0;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+}
+
+input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.option-value-name {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid #e9e9e9;
+  transition: background-color .15s cubic-bezier(.4,0,.2,1), border-color .15s cubic-bezier(.4,0,.2,1), color .15s cubic-bezier(.4,0,.2,1);
+}
+
+.option-value-name.selected {
+  background-color: #6c757d; /* Bootstrap secondary color */
+  color: white;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}

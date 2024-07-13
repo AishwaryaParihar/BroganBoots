@@ -18,6 +18,7 @@ import HorizontalCardProduct from "./homeComponent02/HorizontalCardProduct.jsx";
 function Home() {
   return (
     <div>
+      <CategoryList/>
       <Hero />
       {/* <Offers></Offers> */}
       {/* <Bestpick /> */}
