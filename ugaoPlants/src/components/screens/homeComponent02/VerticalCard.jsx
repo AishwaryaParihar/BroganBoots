@@ -49,9 +49,9 @@ const VerticalCard = ({ loading, data = [] }) => {
                                             </Badge>
                                         )}
                                     </div>
-                                    <Card.Body className="p-2 m-0">
+                                    <Card.Body className="p-2 m-0 shadow">
                                         <Card.Title>{product?.productName}</Card.Title>
-                                        <div className="bestProductName pt-2 pb-3"></div>
+                                        <div className=" pt-2"></div>
                                         <div className="star-rating">
                                             {Array.from({ length: 5 }, (v, i) => (
                                                 <i
@@ -60,7 +60,7 @@ const VerticalCard = ({ loading, data = [] }) => {
                                                 />
                                             ))}
                                         </div>
-                                        <p className="text-success h6 py-3">
+                                        <p className="textprimary h6 py-2">
                                             <del className="text-secondary">
                                                 <i className="fa-solid fa-indian-rupee-sign point12px"></i>
                                                 {displayINRCurrency(product?.price)}
@@ -69,7 +69,7 @@ const VerticalCard = ({ loading, data = [] }) => {
                                             <i className="fa-solid fa-indian-rupee-sign point12px"></i>
                                             {displayINRCurrency(product?.sellingPrice)}
                                         </p>
-                                        <Button className="w-100 btn btn-success rounded-0 text-uppercase" onClick={(e) => handleAddToCart(e, product?._id)}>
+                                        <Button className="w-100 btn bg-color rounded-0 text-uppercase" onClick={(e) => handleAddToCart(e, product?._id)}>
                                             Add to Cart
                                         </Button>
                                     </Card.Body>
