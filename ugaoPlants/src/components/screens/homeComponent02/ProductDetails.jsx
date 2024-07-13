@@ -33,10 +33,11 @@ const ProductDetails = () => {
   const [activeImage, setActiveImage] = useState("");
   const [count, setCount] = useState(1);
 
-  const [zoomImageCoordinate, setZoomImageCoordinate] = useState({
-    x: 0,
-    y: 0,
-  });
+  // const [zoomImageCoordinate, setZoomImageCoordinate] = useState({
+  //   x: 0,
+  //   y: 0,
+  // });
+  // select size 
   const [selectedSize, setSelectedSize] = useState("8"); // Default selected size
 
   const sizes = [6, 7, 8, 9, 10, 11, 12];
@@ -44,6 +45,7 @@ const ProductDetails = () => {
   const handleSizeChange = (size) => {
     setSelectedSize(size);
   };
+  // size chart table 
   const sizetable = [
     { size: 6, cm: "24.6cm" },
     { size: 7, cm: "25.4cm" },
@@ -186,6 +188,8 @@ const ProductDetails = () => {
               </Badge>
             </p>
             <p className="fs-5">{data?.description}</p>
+
+            {/* select size  */}
             <p className="">
               {" "}
               <strong>Size: </strong>
@@ -214,6 +218,8 @@ const ProductDetails = () => {
                 </div>
               ))}
             </div>
+
+            {/* number of product  */}
             <div className="buy-product">
               <div className="count-product ">
                 <button
@@ -251,7 +257,10 @@ const ProductDetails = () => {
                   Add to cart{" "}
                 </button>
               </div>
+
+              {/* size chart table  */}
               <div className="overflow-auto py-3">
+                <h5>Size chart</h5>
                 <table className="table table-bordered">
                   <thead>
                     <tr>
@@ -271,78 +280,27 @@ const ProductDetails = () => {
                   </tbody>
                 </table>
               </div>
-              {/* <button
-                type="button"
-                className="btn border border-success text-success text-uppercase buy-it"
-                onClick={(e)=>handleBuyProduct(e,data?._id)}
-              >
-                buy it now
-              </button> */}
 
-              {/* <ProductAccordian />
-              <p className="buy-it mt-4 ">
-                <a
-                  href=""
-                  className="nolink text-decoration-underline text-uppercase"
-                >
-                  VIEW LIGHT GUIDE{" "}
-                </a>
-                <div className="d-flex justify-content-between ">
-                  <div className="text-center">
-                    <img src={shipping} className="w-75" alt="" />
-                    <p className="">
-                      Free Shipping <br /> above ₹499
-                    </p>
-                  </div>
-                  <div className="text-center">
-                    <img src={gr} className="w-75" alt="" />
-                    <p className="">
-                      Guaranteed <br /> Replacements if <br /> Damaged
-                    </p>
-                  </div>
-                  <div className="text-center">
-                    <img src={expertG} className="w-75" alt="" />
-                    <p className="">Expert Guidance</p>
-                  </div>
-                </div>
-
-                <SocialMedia />
-              </p> */}
             </div>
           </div>
         </div>
-
-        {/* <hr />
-
-        <div className="custom-rich-text02 text-center">
-          <div className="page-width">
-            <h2 className="heading02 my-3 px-1">About the Product</h2>
-            <p className="fs-5">{data?.description}</p>
-          </div>
-        </div> */}
         <hr />
-        <div className="row">
-          <img src={brandyImg} alt="" className="w-100" />
-          {/* <div className="col-md-6">
-            <img src={data?.productImage[0]} alt="" className="h-100 w-100" />
+        <div className="row productImg">
+          {/* <img src={brandyImg} alt="" className="w-100 my-4" /> */}
+          <div className="col-md-4 m-5   text-center">
+           <div className="m-5 p-5 bg-white">
+           <h4>The Captain</h4>
+           <p>A comfortable, durable, and versatile cap toe boot handcrafted with the highest quality Tier 1 USA leather and featuring Goodyear welt construction. The Captain is built to last with a premium look that lets the quality of the materials do the talking.</p>
+           </div>
           </div>
-          <div className="col-md-6 d-flex align-items-center justify-content-start">
-            <div className="">
-              <h2>What’s in the Box</h2>
-              <ul className="text-secondary fs-5">
-                <li>{data?.productName} Plant with Pot: 15 - 20 cm</li>
-                <li>Pot Size: 4 inch diameter </li>
-                <li>Soil Media:Soil+Coco Peat+Coco Chips</li>
-                <li>Recyclable box</li>
-              </ul>
-            </div>
-          </div> */}
         </div>
+
+        <div className="row mt-5">
+          <img src={detailImg} alt="" className="w-100" />
+        </div>
+        <hr />
       </div>
-      <hr />
-      <div className="row">
-        <img src={detailImg} alt="" className="w-100" />
-      </div>
+
       {data.category && (
         <CategoryWiseProductDisplay
           category={data.category}

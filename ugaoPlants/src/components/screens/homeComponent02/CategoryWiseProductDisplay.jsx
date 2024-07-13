@@ -31,7 +31,7 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
   };
 
   return (
-    <div className="container-fluid p-5">
+    <div className="container-fluid p-5 pt-0">
       <div className="heading py-3">
         <h2> {heading}</h2>
       </div>

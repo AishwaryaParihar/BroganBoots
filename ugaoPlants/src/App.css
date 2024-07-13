@@ -289,3 +289,9 @@ input[type=radio] {
 .flex-wrap {
   flex-wrap: wrap;
 }
+.productImg{
+  background-image: url(./assets/Brandy.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
