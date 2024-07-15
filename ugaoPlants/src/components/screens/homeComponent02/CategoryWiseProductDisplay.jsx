@@ -57,11 +57,13 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
                 <Card className="border-0">
                   <Link to={"/product/" + product?._id} className="nolink" onClick={()=>scrollTop()}>
                     <div className="textdecor position-relative">
+                      <div className="bestpick-box">
                       <img
                         src={product.productImage[0]}
                         alt=""
                         className="bextpick"
                       />
+                      </div>
                       <Badge
                         bg="warning"
                         text="dark"

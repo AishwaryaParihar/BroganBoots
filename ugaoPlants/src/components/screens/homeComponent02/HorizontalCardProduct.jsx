@@ -61,11 +61,13 @@ const HorizontalCardProduct = ({ category, heading }) => {
                 <Card className="border-0 shadow">
                   <Link to={"product/" + product?._id} className="nolink">
                     <div className="textdecor position-relative">
+                      <div className="bestpick-box">
                       <img
                         src={product.productImage[0]}
                         alt=""
                         className="bextpick"
                       />
+                      </div>
                       <Badge
                         bg="warning"
                         text="dark"

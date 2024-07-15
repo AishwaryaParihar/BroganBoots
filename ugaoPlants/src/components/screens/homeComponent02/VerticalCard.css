@@ -2,3 +2,11 @@
  
     background-color: #205F83; 
 }
+.bextpick{
+    height: 100%;
+    width: 100%;
+  }
+  .bestpick-box{
+   max-height: 270px;
+   max-width: 100%;
+  }

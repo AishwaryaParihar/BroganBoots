@@ -101,21 +101,15 @@ const CategoryProduct = () => {
     },[sortBy])
     
   return (
-    <div className='container-fluid px-5 ' >
-    <div className="  mt-1">
-        
-        <Breadcrumb className='pt-5'>
-       <Breadcrumb.Item><Link to="/" className="text-dark ">Home</Link></Breadcrumb.Item>
-       {/* <Breadcrumb.Item active className='text-success'>{category}</Breadcrumb.Item> */}
-     </Breadcrumb>
-
-     <img src={seedsHero} alt="" className='img-fluid w-100 mx-0 my-3 p-0'/>
+    <div className='container-fluid  pt-5' >
+    <div className="  mt-5">
+       
        
      </div>
        {/***desktop version */}
-       <div className='row'>
+       <div className='row pt-3'>
            {/***left side */}
-           <div className='bg-white col-md-2'>
+           <div className='bg-color text-white col-md-2 py-3'>
                 {/**sort by */}
                 <div className=''>
                     <h3 className=''>Sort by</h3>
@@ -135,7 +129,7 @@ const CategoryProduct = () => {
 
 
                 {/**filter by */}
-                <div className=''>
+                <div className='py-3'>
                     <h3 className=''>Category</h3>
 
                     <form className=''>

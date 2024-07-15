@@ -4,6 +4,7 @@ import displayINRCurrency from '../../../helper/displayCurrency';
 import addToCart from '../../../helper/addToCart';
 import { Link } from 'react-router-dom';
 import Context from '../../../context';
+import "./verticalCard.css"
 
 const VerticalCard = ({ loading, data = [] }) => {
     const loadingList = new Array(13).fill(null);
@@ -33,12 +34,14 @@ const VerticalCard = ({ loading, data = [] }) => {
                             <Card className="border-0">
                                 <Link to={"product/" + product?._id} className="nolink">
                                     <div className="textdecor position-relative">
+                                        <div className="bestpick-box">
                                         <img
                                             src={product?.productImage[0]}
                                             alt={product?.productName}
-                                            className="img-fluid bextpick"
+                                            className="bextpick"
                                             // style={{max-height:"360px"}}
                                         />
+                                        </div>
                                         {product?.sale && (
                                             <Badge
                                                 bg="warning"
