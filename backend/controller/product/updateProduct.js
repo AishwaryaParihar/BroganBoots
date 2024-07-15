@@ -2,9 +2,12 @@ const uploadProductPermission = require("../../helper/permission");
 const productModel = require("../../models/productModel");
 
 async function updateProductController(req, res) {
+  console.log(req.body)
   try {
     if (!uploadProductPermission(req.userId)) {
       throw new Error("permission denied");
+
+
     }
     const { _id, ...resBody } = req.body;
 
