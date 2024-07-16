@@ -4,7 +4,7 @@ import displayINRCurrency from '../../../helper/displayCurrency';
 import addToCart from '../../../helper/addToCart';
 import { Link } from 'react-router-dom';
 import Context from '../../../context';
-import "./verticalCard.css"
+import "./VerticalCard.css"
 
 const VerticalCard = ({ loading, data = [] }) => {
     const loadingList = new Array(13).fill(null);
