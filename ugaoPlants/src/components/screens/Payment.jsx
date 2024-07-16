@@ -100,7 +100,7 @@ const Payment = () => {
                                     <label htmlFor="add2">Use defferent billing address</label><br />
 
                                 </div>
-                                <button className='btn bg-color btn-primary w-100'>PAY NOW</button>
+                                
                             </form>
                         </div>
 
@@ -137,8 +137,10 @@ const Payment = () => {
                             <span >Total</span>
                             <span>34673</span>
                            </div>
-                           <div className="text-secondary">incluiding in 24 rs taxes</div>
+                           <div className="text-secondary my-2">incluiding in 24 rs taxes</div>
+                           <button className='btn bg-color btn-primary w-100'>PAY NOW</button>
                         </div>
+                        
                     </div>
 
                 </div>
