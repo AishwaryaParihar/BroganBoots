@@ -25,6 +25,9 @@ const ProductDetails = () => {
     description: "",
     price: " ",
     sellingPrice: " ",
+    availablesizes: [],
+    unavailablesizes: [],
+    color:""
   });
   const params = useParams();
   const [loading, setLoading] = useState(true);
@@ -32,19 +35,20 @@ const ProductDetails = () => {
   const [activeImage, setActiveImage] = useState("");
   const [count, setCount] = useState(1);
 
+
   // const [zoomImageCoordinate, setZoomImageCoordinate] = useState({
   //   x: 0,
   //   y: 0,
   // });
-  // select size 
-  const [selectedSize, setSelectedSize] = useState("8"); // Default selected size
+  // select size
+  const [selectedSize, setSelectedSize] = useState(""); // Default selected size
 
   const sizes = [6, 7, 8, 9, 10, 11, 12];
 
   const handleSizeChange = (size) => {
     setSelectedSize(size);
   };
-  // size chart table 
+  // size chart table
   const sizetable = [
     { size: 6, cm: "24.6cm" },
     { size: 7, cm: "25.4cm" },
@@ -110,7 +114,7 @@ const ProductDetails = () => {
   // };
 
   const handleAddToCart = async (e, id) => {
-    await addToCart(e, id);
+    await addToCart(e, id, selectedSize);
     fetchUserAddToCart();
   };
 
@@ -195,12 +199,14 @@ const ProductDetails = () => {
               Order ½ size smaller than you wear in sneakers. Find my size
             </p>
             <div className="d-flex flex-wrap pb-3">
-              {sizes.map((size) => (
+              {data.availablesizes.map((size) => (
                 <div key={size} className="option-value">
                   <input
                     type="radio"
                     name="Size"
-                    className="option-value-input"
+                    className={`option-value-input ${
+                      data.unavailablesizes.includes(size) ? "bg-secondary" : "bg-white"
+                    }`}
                     id={`mens-legend-chelsea-boot-black-matte-Size-${size}`}
                     value={size}
                     checked={selectedSize === size.toString()}
@@ -217,6 +223,11 @@ const ProductDetails = () => {
                 </div>
               ))}
             </div>
+
+            {data.color && <div className="d-flex align-items-center d-inline-block gap-2">
+              <div className="fs-5 font-weight-bold">Color</div>
+              <div className="rounded-circle" style={{width: "20px", height: "20px", backgroundColor: `${data.color}`}}></div>
+            </div>}
 
             {/* number of product  */}
             <div className="buy-product">
@@ -279,12 +290,11 @@ const ProductDetails = () => {
                   </tbody>
                 </table>
               </div>
-
             </div>
           </div>
         </div>
         <hr />
-        <ProductDetailsImg/>
+        <ProductDetailsImg />
       </div>
 
       {data.category && (

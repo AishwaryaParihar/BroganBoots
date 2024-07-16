@@ -4,9 +4,8 @@ import ProductCategory from "../../../helper/ProductCategory";
 import UploadImage from "../../../helper/UploadImage";
 import DisplayImage from "./DisplayImage";
 import SummaryApi from "../../../common/Index";
-import {toast} from 'react-toastify'
-
-
+import { toast } from "react-toastify";
+import ProductSize from "./product-size";
 
 export const UploadProduct = ({ onClose, fetchData }) => {
   const [data, setData] = useState({
@@ -14,6 +13,8 @@ export const UploadProduct = ({ onClose, fetchData }) => {
     brandName: "",
     category: "",
     productImage: [],
+    availablesizes: [],
+    unavailablesizes: [],
     description: "",
     price: "",
     sellingPrice: "",
@@ -38,11 +39,22 @@ export const UploadProduct = ({ onClose, fetchData }) => {
     });
   };
 
+  const handleProductSize = (e) => {
+    const { value } = e.target;
+    console.log(value)
+    setData((prev) => {
+      return {
+        ...prev,
+        availablesizes: [...prev.availablesizes, value],
+      };
+    });
+
+    console.log(data)
+  };
+
   const handleUploadProduct = async (e) => {
     const file = e.target.files[0];
     const uploadImageCloudinary = await UploadImage(file);
-
-
 
     setData((preve) => {
       return {
@@ -67,31 +79,30 @@ export const UploadProduct = ({ onClose, fetchData }) => {
 
   //  upload product
 
-  const handleSubmit = async (e)=> {
-    e.preventDefault()
-    console.log(data)
-    
-    const response = await fetch(SummaryApi.uploadProduct.url,{
-      method : SummaryApi.uploadProduct.method,
-      credentials : 'include',
-      headers : {
-        "content-type" : "application/json"
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(data);
+
+    const response = await fetch(SummaryApi.uploadProduct.url, {
+      method: SummaryApi.uploadProduct.method,
+      credentials: "include",
+      headers: {
+        "content-type": "application/json",
       },
-      body : JSON.stringify(data)
-    })
-    
-    const responseData = await response.json()
-    if(responseData.success){
-      toast.success(responseData?.message)
-      onClose()
-      fetchData()
+      body: JSON.stringify(data),
+    });
+
+    const responseData = await response.json();
+    if (responseData.success) {
+      toast.success(responseData?.message);
+      onClose();
+      fetchData();
     }
 
-    if(responseData.error){
-      toast.error(responseData?.message)
+    if (responseData.error) {
+      toast.error(responseData?.message);
     }
-  }
-
+  };
 
   return (
     <div className="position-fixed   uploadopacity top-0 start-0 bottom-0 end-0 d-flex justify-content-center align-items-center ">
@@ -103,7 +114,11 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             onClick={onClose}
           ></i>
         </div>
-        <form action="" className="row p-4 gap-2 fw-bolder pb-4" onSubmit={handleSubmit}>
+        <form
+          action=""
+          className="row p-4 gap-2 fw-bolder pb-4"
+          onSubmit={handleSubmit}
+        >
           <label className="" htmlFor="productName">
             {" "}
             Product Name :
@@ -133,17 +148,14 @@ export const UploadProduct = ({ onClose, fetchData }) => {
 
           <label htmlFor="category"> Category</label>
           <select
-          required
-          onChange={handleOnChange}
+            required
+            onChange={handleOnChange}
             name="category"
             id="category"
             value={data.category}
             className="p-2 m-2 rounded-3 bg-light border border-light"
           >
-            <option value={""}>
-              
-              Select Category
-            </option>
+            <option value={""}>Select Category</option>
 
             {ProductCategory.map((el, index) => {
               return (
@@ -230,10 +242,7 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             required
           />
 
-
-
-
-             {/* NEW ADDED */}
+          {/* NEW ADDED */}
 
           <label htmlFor="weight"> Weight :</label>
           <input
@@ -247,7 +256,6 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             required
           />
 
-
           <label htmlFor="smallBigSize">small and Big Size Size :</label>
           <input
             type="text"
@@ -260,7 +268,15 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             required
           />
 
+          <div className="">
+            <label htmlFor="smallBigSize">Choose Available Sizes:</label>
 
+            <div className="d-flex gap-2">
+              {new Array(7).fill(0).map((_, i) => (
+                <ProductSize size={String(i + 6)} handleProductSize={handleProductSize} />
+              ))}
+            </div>
+          </div>
 
           {/* <label htmlFor="biggestSize"> Size :</label>
           <input
@@ -275,13 +291,11 @@ export const UploadProduct = ({ onClose, fetchData }) => {
           />
  */}
 
-
-
-         <label htmlFor="color"> Color :</label>
+          <label htmlFor="color"> Color :</label>
           <input
             type="text"
             id="color"
-            placeholder="Enter Product color "
+            placeholder="Enter color in hex or RGB"
             name="color"
             value={data.color}
             onChange={handleOnChange}
@@ -289,8 +303,7 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             required
           />
 
-
-         <label htmlFor="features"> Features :</label>
+          <label htmlFor="features"> Features :</label>
           <input
             type="text"
             id="features"
@@ -302,14 +315,9 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             required
           />
 
+          {/* NEW ADDED */}
 
-
-
-     {/* NEW ADDED */}
-
-
-     
-     <label htmlFor="description"> Description :</label>
+          <label htmlFor="description"> Description :</label>
           <textarea
             type="text"
             id="description"
@@ -320,8 +328,6 @@ export const UploadProduct = ({ onClose, fetchData }) => {
             rows={4}
             className="p-2 m-2 rounded-3 bg-light border border-light "
           />
-
-
 
           <button className="btn btn-success ms-2">Uplaad Product</button>
         </form>

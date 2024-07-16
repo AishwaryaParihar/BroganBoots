@@ -2,7 +2,7 @@ import SummaryApi from "../common/Index"
 import { toast } from 'react-toastify'
 
 
-const addToCart = async(e,id) =>{
+const addToCart = async(e,id, selectedSize) =>{
     e?.stopPropagation()
     e?.preventDefault()
 
@@ -13,7 +13,7 @@ const addToCart = async(e,id) =>{
             "content-type" : 'application/json'
         },
         body : JSON.stringify(
-            { productId : id }
+            { productId : id, size: selectedSize }
         )
     })
 

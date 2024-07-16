@@ -1,22 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../adminScreens/Admin.css";
 import ProductCategory from "../../../helper/ProductCategory";
 import UploadImage from "../../../helper/UploadImage";
 import DisplayImage from "./DisplayImage";
 import SummaryApi from "../../../common/Index";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
+import ProductSize from "./product-size";
 
-const AdminEditProduct = (
-  {onClose, productData,fetchdata}) => {
+const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
   const [data, setData] = useState({
     ...productData,
     productName: productData?.productName,
     brandName: productData?.brandName,
-    category: productData?.category, 
-    productImage: productData?.productImage || [], 
+    category: productData?.category,
+    productImage: productData?.productImage || [],
     description: productData?.description,
     price: productData?.price,
+    availablesizes: productData?.availablesizes,
     sellingPrice: productData?.sellingPrice,
+  });
+
+  const [showSize, setShowSize] = useState(() => {
+    return productData?.availablesizes.map((size) => {
+      return {
+        size,
+        selected: true,
+      };
+    });
   });
 
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);
@@ -30,6 +40,21 @@ const AdminEditProduct = (
         ...preve,
         [name]: value,
       };
+    });
+  };
+
+  const handleSize = (e) => {
+    const { name, value } = e.target;
+
+    console.log(name);
+
+    setShowSize((prev) => {
+      return prev.map((size) => {
+        return {
+          size: size.size,
+          selected: size?.size === name ? !size.selected : size.selected,
+        };
+      });
     });
   };
 
@@ -60,29 +85,39 @@ const AdminEditProduct = (
 
   //  upload product
 
-  const handleSubmit = async (e)=> {
-    e.preventDefault()
-    
-    const response = await fetch(SummaryApi.updateProduct.url,{
-      method : SummaryApi.updateProduct.method,
-      credentials : 'include',
-      headers : {
-        "content-type" : "application/json"
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const filteredSizes = showSize
+      ?.filter((size) => size.selected)
+      .map((size) => size.size);
+    console.log(filteredSizes);
+    setData((prev) => {
+      return {
+        ...prev,
+        availablesizes: filteredSizes,
+      };
+    });
+
+    const response = await fetch(SummaryApi.updateProduct.url, {
+      method: SummaryApi.updateProduct.method,
+      credentials: "include",
+      headers: {
+        "content-type": "application/json",
       },
-      body : JSON.stringify(data)
-    })
-    
-    const responseData = await response.json()
-    if(responseData.success){
-      toast.success(responseData?.message)
-      onClose()
-      fetchdata()
+      body: JSON.stringify(data),
+    });
+
+    const responseData = await response.json();
+    if (responseData.success) {
+      toast.success(responseData?.message);
+      onClose();
+      fetchdata();
     }
 
-    if(responseData.error){
-      toast.error(responseData?.message)
+    if (responseData.error) {
+      toast.error(responseData?.message);
     }
-  } 
+  };
   return (
     <div className="position-fixed   uploadopacity top-0 start-0 bottom-0 end-0 d-flex justify-content-center align-items-center ">
       <div className=" p-3 rounded uplaod-product">
@@ -93,7 +128,11 @@ const AdminEditProduct = (
             onClick={onClose}
           ></i>
         </div>
-        <form action="" className="row p-4 gap-2 fw-bolder pb-4" onSubmit={handleSubmit}>
+        <form
+          action=""
+          className="row p-4 gap-2 fw-bolder pb-4"
+          onSubmit={handleSubmit}
+        >
           <label className="" htmlFor="productName">
             {" "}
             Product Name :
@@ -123,17 +162,14 @@ const AdminEditProduct = (
 
           <label htmlFor="category"> Category</label>
           <select
-          required
-          onChange={handleOnChange}
+            required
+            onChange={handleOnChange}
             name="category"
             id="category"
             value={data.category}
             className="p-2 m-2 rounded-3 bg-light border border-light"
           >
-            <option value={""}>
-              
-              Select Category
-            </option>
+            <option value={""}>Select Category</option>
 
             {ProductCategory.map((el, index) => {
               return (
@@ -143,6 +179,27 @@ const AdminEditProduct = (
               );
             })}
           </select>
+
+          <div className="">
+            <label htmlFor="">Available Sizes</label>
+
+            <div className="">
+              {showSize.length !== 0 &&
+                showSize?.map((size) => (
+                  <div className="d-flex gap-2 border-2 border-red-800">
+                    <label htmlFor={size.size}>{size.size}</label>
+                    <input
+                      type="checkbox"
+                      name={size.size}
+                      id={size.size}
+                      value={size.size}
+                      checked={size.selected}
+                      onChange={handleSize}
+                    />
+                  </div>
+                ))}
+            </div>
+          </div>
 
           <label htmlFor="productImage"> Product Image :</label>
           <label htmlFor="uploadImageInput">

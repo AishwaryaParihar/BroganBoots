@@ -162,7 +162,7 @@ const Cart = ({ show, toggleOffcanvas, context }) => {
 
                         </div>
 
-                        <div className="text-secondary">size : small</div>
+                        <div className="text-secondary">size : {product?.size}</div>
                         <div className="text-secondary">
                           category : {product?.productId?.category}
                         </div>
