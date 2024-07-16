@@ -174,9 +174,7 @@ function Nav() {
                   setMenuDisplay((preve) => !preve);
                 }}
               >
-                <Link>
-                  <i className="fa-regular fa-user text-dark pt-3 px-2 "></i>
-                </Link>
+               
               </span>
               <span>
                 {user?._id ? (

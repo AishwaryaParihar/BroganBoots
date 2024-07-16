@@ -3,8 +3,9 @@
     background-color: #205F83; 
 }
 .bextpick{
-    height: 100%;
+    height: 270px;
     width: 100%;
+    object-fit: fill;
   }
   .bestpick-box{
    max-height: 270px;

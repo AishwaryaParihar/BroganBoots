@@ -152,7 +152,7 @@ const CategoryProduct = () => {
 
             {/***right side ( product ) */}
             <div className=' col-md-10'>
-              <div className=''>Search Results : {data.length}</div>
+              <div className='h4'>Search Results : {data.length}</div>
 
              <div className=''>
               {

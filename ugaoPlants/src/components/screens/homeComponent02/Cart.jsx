@@ -203,7 +203,7 @@ const Cart = ({ show, toggleOffcanvas, context }) => {
               <div className=""> total </div>
             ) : (
              <div className="d-grid">
-               <div className="btn btn-success"> CHECKOUT - {displayINRCurrency(totalPrice)} </div>
+               <div className="btn btn-success"><Link to="/payment"> CHECKOUT - {displayINRCurrency(totalPrice)} </Link> </div>
              </div>
             )}
           </div>
