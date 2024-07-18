@@ -29,13 +29,19 @@ const paymentStatus = require("../controller/payment/payment-status");
 
 // payment
 
-router.post('/order', phonePePayment)
-router.post('/status', authToken, paymentStatus)
+
+const contactusController = require("../controller/user/contactus");
+const contactDetailDisplay = require("../controller/user/contactusDetail");
 
 router.post("/signup", userSignUpController);
 router.post("/signin", userSignInController);
 router.get("/user-details", authToken, userDetailsController);
 router.get("/userLogout", userLogoutController);
+router.post("/contact-us", contactusController)
+router.get("/contact-details", contactDetailDisplay)
+
+router.post('/order', phonePePayment)
+router.post('/status', authToken, paymentStatus)
 
 //admin panel
 

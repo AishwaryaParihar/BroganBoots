@@ -249,7 +249,7 @@
   margin: 2px;
 }
 
-input[type=radio] {
+.hidden-radio {
   position: absolute;
   opacity: 0;
   width: 0;

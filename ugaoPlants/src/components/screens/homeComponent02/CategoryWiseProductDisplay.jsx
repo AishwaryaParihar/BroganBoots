@@ -53,7 +53,7 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
             ))
           : // Limit to 4 products
             data.slice(0, 4).map((product, index) => (
-              <div key={index} className="col-6 col-md-3">
+              <div key={index} className="col-6 col-md-3 py-3">
                 <Card className="border-0">
                   <Link to={"/product/" + product?._id} className="nolink" onClick={()=>scrollTop()}>
                     <div className="textdecor position-relative">

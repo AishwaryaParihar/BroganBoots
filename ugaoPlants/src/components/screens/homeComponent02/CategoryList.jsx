@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import SummaryApi from "../../../common/Index";
+import allCategory from "../../../assets/Chelsea01.png"
 import './categoryList.css'
 
 const CategoryList = () => {
@@ -60,16 +61,19 @@ const CategoryList = () => {
                 </Link>
               </div>
             ))}
+            <div className="category-img-box-out border" >
+        <Link className="textdecor h5" to={`/product-category?${allCategoriesquarry}`}>
+        <div className="text-center category-img-box">
+        <img src={allCategory} alt="" className="category-img" /></div>
+          <div className="text-center py-2 text-capitalize ">All categories</div>
+        </Link>
+      </div>
           </div>
         )}
       </div>
      </div>
 
-      <div>
-        <Link to={`/product-category?${allCategoriesquarry}`}>
-          <div className="textdecor">All categories</div>
-        </Link>
-      </div>
+      
     </div>
   );
 };

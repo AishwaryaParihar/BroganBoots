@@ -57,7 +57,7 @@ const HorizontalCardProduct = ({ category, heading }) => {
             ))
           : // Limit to 4 products
             data.slice(0, 4).map((product, index) => (
-              <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div key={index} className="col-12 col-sm-6 col-md-4 col-lg-3 py-3">
                 <Card className="border-0 shadow">
                   <Link to={"product/" + product?._id} className="nolink">
                     <div className="textdecor position-relative">
