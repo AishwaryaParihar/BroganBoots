@@ -1,6 +1,6 @@
 
-
-const backendDomin = "http://localhost:8081";
+import 'dotenv/config'
+const backendDomin = process.env.BACKEND_URL;
 
 const SummaryApi = {
   signUP: {
