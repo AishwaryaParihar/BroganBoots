@@ -29,7 +29,7 @@ import { Breadcrumb } from "react-bootstrap";
 import About from "./components/screens/About";
 import Contactus from "./components/screens/Contactus";
 import Payment from "./components/screens/product/payment";
-import Payment from "./components/screens/Payment";
+// import Payment from "./components/screens/Payment";
 import { Privacy } from "./components/screens/Privacy";
 import { Refund } from "./components/screens/Refund";
 import TermsAndConditions from "./components/screens/TermsAndConditions";
