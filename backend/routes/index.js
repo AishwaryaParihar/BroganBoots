@@ -24,6 +24,13 @@ const updateAddToCartProduct = require("../controller/user/updateAddToCartProduc
 const deleteAddToCartProduct = require("../controller/user/deleteAddToCartProduct");
 const filterProductController = require("../controller/product/filterProduct");
 const searchProduct = require("../controller/product/searchProduct");
+const phonePePayment = require("../controller/payment/phonePe");
+const paymentStatus = require("../controller/payment/payment-status");
+
+// payment
+
+router.post('/order', phonePePayment)
+router.post('/status', authToken, paymentStatus)
 
 router.post("/signup", userSignUpController);
 router.post("/signin", userSignInController);

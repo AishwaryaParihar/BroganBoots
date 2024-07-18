@@ -11,18 +11,13 @@ async function authToken(req, res, next) {
         success: false
       })
     }
-    // ("Authorization")?.replace("Bearer ", "");  
     jwt.verify(token, process.env.TOKEN_SECRET_KEY, function(err, decoded) {
-    console.log(err)
-    console.log("decode",decoded)
-    
      if(err){
       console.log("error auth", err)
      }
      req.userId = decoded?._id
 
      next()
-
     });
 
     

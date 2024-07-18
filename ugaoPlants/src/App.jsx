@@ -19,7 +19,7 @@ import AllUsers from "./components/screens/adminScreens/AllUsers";
 import UserProvider from "./components/providers/user-provider";
 // import Product from "./components/screens/adminScreens/Products";
 import Products from "./components/screens/adminScreens/Products";
-import Settings from "./components/screens/adminScreens/Settings"
+import Settings from "./components/screens/adminScreens/Settings";
 import ActivityLog from "./components/screens/adminScreens/ActivityLog";
 import CategoryProduct from "./components/screens/homeComponent02/CategoryProduct";
 import ProductDetails from "./components/screens/homeComponent02/ProductDetails";
@@ -28,11 +28,11 @@ import SearchProduct from "./components/screens/homeComponent02/SearchProduct";
 import { Breadcrumb } from "react-bootstrap";
 import About from "./components/screens/About";
 import Contactus from "./components/screens/Contactus";
-
+import Payment from "./components/screens/product/payment";
 
 function App() {
   const dispatch = useDispatch();
-  const [cartProductCount, setCartProductCount]=useState(0)
+  const [cartProductCount, setCartProductCount] = useState(0);
   const fetchUserDetails = async () => {
     const dataResponse = await fetch(SummaryApi.current_user.url, {
       method: SummaryApi.current_user.method,
@@ -44,18 +44,16 @@ function App() {
     if (dataApi.success) {
       dispatch(setUserDetails(dataApi.data));
     }
-
-   
   };
-  const fetchUserAddtoCart = async ()=>{
-    const dataResponse =await  fetch(SummaryApi.addToCartProductCount.url, {
+  const fetchUserAddtoCart = async () => {
+    const dataResponse = await fetch(SummaryApi.addToCartProductCount.url, {
       method: SummaryApi.addToCartProductCount.method,
       credentials: "include",
     });
 
     const dataApi = await dataResponse.json();
-   setCartProductCount(dataApi?.data?.count)
-  }
+    setCartProductCount(dataApi?.data?.count);
+  };
   useEffect(() => {
     // user details
     fetchUserDetails();
@@ -65,13 +63,12 @@ function App() {
     <>
       <Context.Provider
         value={{
-          fetchUserDetails,//user detail fetch
+          fetchUserDetails, //user detail fetch
           cartProductCount, //current use add to cartproduct count
-          fetchUserAddtoCart
+          fetchUserAddtoCart,
         }}
       >
-        <ToastContainer 
-        position="top-center"/>
+        <ToastContainer position="top-center" />
 
         {/* <header>
           <Nav />
@@ -82,19 +79,18 @@ function App() {
             <Route path="/" element={<UserProvider />}>
               <Route path="/" element={<Home />} />
               <Route path="/seeds" element={<SeedsHero />} />
-              <Route path="/about" element={<About/>} />
-              <Route path="/contact-us" element={<Contactus/>} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact-us" element={<Contactus />} />
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/product-category" element={<CategoryProduct />} />
-              <Route path="/cart" element={<Cart/>} />
-              <Route path="/search" element={<SearchProduct/>} />
-
-
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/search" element={<SearchProduct />} />
+              <Route path="/buy" element={<Payment />} />
             </Route>
             <Route path="/admin-panel" element={<Adminpanel />}>
-              <Route  path="alluser" element={<AllUsers />}></Route>
+              <Route path="alluser" element={<AllUsers />}></Route>
               <Route path="products" element={<Products />}></Route>
               <Route path="settings" element={<Settings />}></Route>
               <Route path="activitylog" element={<ActivityLog />}></Route>
