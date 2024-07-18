@@ -78,6 +78,14 @@ const SummaryApi = {
   filterProduct : {
     url : `${backendDomin}/api/filter-product`,
     method : 'post'
+  },
+  contactus : {
+    url : `${backendDomin}/api/contact-us`,
+    method: 'post'
+  },
+  contactusDetail:{
+    url : `${backendDomin}/api/contact-details`,
+    method: 'get'
   }
 };
 

@@ -49,19 +49,19 @@ function Footer() {
                 <a href="/about-us.html">Contact Us</a>
               </li>
               <li>
-                <a href="/ourProducts.html">Terms & Conditions</a>
+                <a href="/terms-conditions">Terms & Conditions</a>
               </li>
               <li>
-                <a href="/globalPresence.html">Privacy Policy</a>
+                <a href="/privacy">Privacy Policy</a>
               </li>
               <li>
-                <a href="/CYD.html">Cancellation Policy</a>
+                <a href="/cancel-policy">Cancellation Policy</a>
               </li>
               <li>
-                <a href="/contactUs.html">Replacement & Refund Policy</a>
+                <a href="/refund">Replacement & Refund Policy</a>
               </li>
               <li>
-                <a href="/contactUs.html">Shipment Policy</a>
+                <a href="/shipment-policy">Shipment Policy</a>
               </li>
             </ul>
           </div>

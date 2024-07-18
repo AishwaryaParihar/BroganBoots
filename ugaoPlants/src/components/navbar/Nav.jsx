@@ -1,5 +1,5 @@
 // Nav.js
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/logo.jpg";
 import "./nav.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -8,10 +8,19 @@ import SummaryApi from "../../common/Index";
 import { toast } from "react-toastify";
 import { setUserDetails } from "../../store/userSlice";
 import ROLE from "../../common/Role";
+import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 import Context from "../../context";
 import Cart from "../screens/homeComponent02/Cart"; // Import the Cart component
 
 function Nav() {
+
+  useEffect(() => {
+    // Initialize tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipTriggerList.map((tooltipTriggerEl) => {
+      return new window.bootstrap.Tooltip(tooltipTriggerEl)
+    });
+  }, []);
   // for backend
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch();
@@ -174,73 +183,83 @@ function Nav() {
                   setMenuDisplay((preve) => !preve);
                 }}
               >
-               
+
               </span>
               <span>
                 {user?._id ? (
+                  <OverlayTrigger
+                  placement="top"
+                  overlay={<Tooltip id="tooltip-top">logout/Register</Tooltip>}
+                >
                   <button
                     className="border-0 bg-transparent"
                     onClick={handleLogout}
                   >
-                    <i className="fa-solid fa-circle-left fa-lg pt-3 px-2 text-dark border-0"></i>
+                    <i className="fa-regular fa-user fa-lg  px-2 text-dark border-0"></i>
                   </button>
+                  </OverlayTrigger>
                 ) : (
-                  <Link to="/signin">
-                    <i className="fa-solid fa-right-to-bracket pt-3 px-2 text-dark"></i>
-                  </Link>
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip id="tooltip-top">Login/Register</Tooltip>}
+                  >
+                    <Link to="/signin" data-bs-toggle="tooltip" title="Login/Register">
+                      <i className="fa-regular fa-user  px-2 fa-lg text-dark"></i>
+                    </Link>
+                  </OverlayTrigger>
                 )}
               </span>
               {user?._id && (
                 <Link to="#" onClick={toggleCartOffcanvas}>
-                  <i className="fa-solid fa-cart-shopping pt-3 px-2 text-dark">
-                    <sup className="text-white rounded-circle fw-bold bg-secondary px-2 py-1">
+                  <i className="fa-solid fa-cart-shopping fa-lg px-2 text-dark">
+                    <sup className="text-white rounded-circle bg-secondary px-1">
                       {context?.cartProductCount}
                     </sup>
                   </i>
                 </Link>
               )}
               <span className="position-relative group">
-                {user?._id && (
+                {user?.role === ROLE.ADMIN && (
                   <span
                     onClick={() => {
-                      setMenuDisplay((preve) => !preve);
+                      setMenuDisplay((prev) => !prev);
                     }}
-                    
-                  > <Link>
-                  <i className="fa-regular fa-user text-success pt-3 px-2"></i>
-                </Link></span>
+                  >
+                    <Link to="#">
+                      {/* <i class="fa-solid fa-user-tie"></i> */}
+                      <i className="fa-solid fa-user-tie text-dark fa-lg px-2"></i>
+                    </Link>
+                  </span>
                 )}
                 {menuDisplay && (
                   <span className="popUPtext">
-                    {user?.role === ROLE.ADMIN && (
-                      <Link
-                        to="/admin-panel/products"
-                        className="text-decoration-none text-dark"
-                        onClick={() => {
-                          setMenuDisplay((preve) => !preve);
-                        }}
-                      >
-                        Admin Panel
-                      </Link>
-                    )}
+                    <Link
+                      to="/admin-panel/products"
+                      className="text-decoration-none text-dark"
+                      onClick={() => {
+                        setMenuDisplay((prev) => !prev);
+                      }}
+                    >
+                      Admin Panel
+                    </Link>
                   </span>
                 )}
               </span>
             </div>
           </div>
           <form className="d-flex  align-items-center mx-3 w-100 d-lg-none d-block" role="search">
-                <div className="search-box w-100 d-flex flex-nowrap ">
-                  <input
-                    onChange={handleSearch}
-                    value={search}
-                    className="form-control  p-2 px-5 rounded-5 input-text"
-                    type="search"
-                    placeholder="Search..."
-                    aria-label="Search"
-                  />
-                  <i className="fa-solid fa-magnifying-glass text-dark"></i>
-                </div>
-              </form>
+            <div className="search-box w-100 d-flex flex-nowrap ">
+              <input
+                onChange={handleSearch}
+                value={search}
+                className="form-control  p-2 px-5 rounded-5 input-text"
+                type="search"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+              <i className="fa-solid fa-magnifying-glass text-dark"></i>
+            </div>
+          </form>
         </nav>
       </section>
       <Cart

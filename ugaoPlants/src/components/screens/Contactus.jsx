@@ -1,7 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import Map from "./Map";
+import SummaryApi from "../../common/Index";
+import { toast } from "react-toastify";
 
 const Contactus = () => {
+const [data, setData]=useState({
+  name:"",
+  mobile:"",
+  email:"",
+  msg:""
+})
+const handleOnChange=(e)=>{
+  const{name,value}=e.target;
+  setData((prev)=>{
+    return{
+      ...prev,
+      [name]:value
+    }
+  })
+}
+console.log("data",data)
+
+const handleSubmit=async(e)=>{
+  e.preventDefault()
+  const contactResponse = await fetch(SummaryApi.contactus.url,{
+    method: SummaryApi.contactus.method,
+    headers: {
+      "content-type": "application/json"
+    },
+    body:JSON.stringify(data)
+  })
+  const dataApi= await contactResponse.json()
+
+  if(dataApi.success){
+    toast.success(dataApi.message)
+  }
+  if(dataApi.error){
+    toast.error(dataApi.message)
+  }
+
+  console.log("data",dataApi)
+
+
+}
   return (
     <div>
       <div class="section section-padding pt-5">
@@ -55,7 +96,7 @@ const Contactus = () => {
           </div>
 
           <div>
-            <form action="#" method="post">
+            <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="form-group col-md-6 ">
                   <input
@@ -63,15 +104,19 @@ const Contactus = () => {
                     className="form-control"
                     placeholder="Your Name *"
                     name="name"
+                    value={data.name}
+                    onChange={handleOnChange}
                     required
                   />
                 </div>
                 <div className="form-group col-md-6 pt-3 pt-md-0 ">
                   <input
-                    type="number"
+                    type=""
                     className="form-control"
                     placeholder="Mobile Number *"
                     name="mobile"
+                    value={data.mobile}
+                    onChange={handleOnChange}
                     required
                   />
                 </div>
@@ -81,6 +126,8 @@ const Contactus = () => {
                     className="form-control"
                     placeholder="Email *"
                     name="email"
+                    value={data.email}
+                    onChange={handleOnChange}
                     required
                   />
                 </div>
@@ -90,6 +137,8 @@ const Contactus = () => {
                     className="form-control"
                     placeholder="Message"
                     rows="4"
+                    value={data.msg}
+                    onChange={handleOnChange}
                     required
                   ></textarea>
                 </div>

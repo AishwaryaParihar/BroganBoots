@@ -204,7 +204,7 @@ const ProductDetails = () => {
                   <input
                     type="radio"
                     name="Size"
-                    className={`option-value-input ${
+                    className={`option-value-input hidden-radio ${
                       data.unavailablesizes.includes(size) ? "bg-secondary" : "bg-white"
                     }`}
                     id={`mens-legend-chelsea-boot-black-matte-Size-${size}`}

@@ -24,11 +24,15 @@ const updateAddToCartProduct = require("../controller/user/updateAddToCartProduc
 const deleteAddToCartProduct = require("../controller/user/deleteAddToCartProduct");
 const filterProductController = require("../controller/product/filterProduct");
 const searchProduct = require("../controller/product/searchProduct");
+const contactusController = require("../controller/user/contactus");
+const contactDetailDisplay = require("../controller/user/contactusDetail");
 
 router.post("/signup", userSignUpController);
 router.post("/signin", userSignInController);
 router.get("/user-details", authToken, userDetailsController);
 router.get("/userLogout", userLogoutController);
+router.post("/contact-us", contactusController)
+router.get("/contact-details", contactDetailDisplay)
 
 //admin panel
 

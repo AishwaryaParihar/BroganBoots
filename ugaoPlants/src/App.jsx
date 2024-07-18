@@ -29,6 +29,11 @@ import { Breadcrumb } from "react-bootstrap";
 import About from "./components/screens/About";
 import Contactus from "./components/screens/Contactus";
 import Payment from "./components/screens/Payment";
+import { Privacy } from "./components/screens/Privacy";
+import { Refund } from "./components/screens/Refund";
+import TermsAndConditions from "./components/screens/TermsAndConditions";
+import { CancelProces } from "./components/screens/CancelProces";
+import { ShipmentPolicy } from "./components/screens/ShipmentPolicy";
 
 
 function App() {
@@ -92,7 +97,11 @@ function App() {
               <Route path="/cart" element={<Cart/>} />
               <Route path="/search" element={<SearchProduct/>} />
               <Route path="/payment" element={<Payment/>}/>
-
+              <Route path="/privacy" element={<Privacy/>}/>
+              <Route path="/refund" element={<Refund/>}/>
+              <Route path="/terms-conditions" element={<TermsAndConditions/>}/>
+              <Route path="/cancel-policy" element={<CancelProces/>}/>
+              <Route path="/shipment-policy" element={<ShipmentPolicy/>}/>
 
             </Route>
             <Route path="/admin-panel" element={<Adminpanel />}>
