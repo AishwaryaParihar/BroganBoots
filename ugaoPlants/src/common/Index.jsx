@@ -1,5 +1,4 @@
 
-import 'dotenv/config'
 const backendDomin = 'https://broganboots.onrender.com'
 
 const SummaryApi = {
