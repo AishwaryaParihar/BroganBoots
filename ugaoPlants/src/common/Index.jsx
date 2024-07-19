@@ -1,6 +1,6 @@
 
 import 'dotenv/config'
-const backendDomin = process.env.BACKEND_URL;
+const backendDomin = 'https://broganboots.onrender.com'
 
 const SummaryApi = {
   signUP: {
