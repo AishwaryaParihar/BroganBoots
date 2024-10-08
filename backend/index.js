@@ -8,7 +8,7 @@ const router = require("./routes");
 const app = express();
 app.use(
   cors({
-    origin: 'https://brogan-boots.vercel.app, http://localhost:5173/',
+    origin: ' http://localhost:5173/',
     credentials: true,
   })
 );
